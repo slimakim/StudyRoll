@@ -1,0 +1,35 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyRoll", "StudyRoll\StudyRoll.csproj", "{983522FD-B1FA-46DA-B4D8-BC3EC3CC0FF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailManager", "MailManager\MailManager.csproj", "{24CB3504-3559-484A-979A-442DDA41C1A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesExample", "DelegatesExample\DelegatesExample.csproj", "{8C3CA239-D1B4-4BEB-8767-988F6CD5586F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{399B5D93-E5E9-4240-9B76-116D93B4B3B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{983522FD-B1FA-46DA-B4D8-BC3EC3CC0FF0}.Debug|x86.ActiveCfg = Debug|x86
+		{983522FD-B1FA-46DA-B4D8-BC3EC3CC0FF0}.Debug|x86.Build.0 = Debug|x86
+		{983522FD-B1FA-46DA-B4D8-BC3EC3CC0FF0}.Release|x86.ActiveCfg = Release|x86
+		{983522FD-B1FA-46DA-B4D8-BC3EC3CC0FF0}.Release|x86.Build.0 = Release|x86
+		{24CB3504-3559-484A-979A-442DDA41C1A6}.Debug|x86.ActiveCfg = Debug|x86
+		{24CB3504-3559-484A-979A-442DDA41C1A6}.Debug|x86.Build.0 = Debug|x86
+		{24CB3504-3559-484A-979A-442DDA41C1A6}.Release|x86.ActiveCfg = Release|x86
+		{24CB3504-3559-484A-979A-442DDA41C1A6}.Release|x86.Build.0 = Release|x86
+		{8C3CA239-D1B4-4BEB-8767-988F6CD5586F}.Debug|x86.ActiveCfg = Debug|x86
+		{8C3CA239-D1B4-4BEB-8767-988F6CD5586F}.Debug|x86.Build.0 = Debug|x86
+		{8C3CA239-D1B4-4BEB-8767-988F6CD5586F}.Release|x86.ActiveCfg = Release|x86
+		{8C3CA239-D1B4-4BEB-8767-988F6CD5586F}.Release|x86.Build.0 = Release|x86
+		{399B5D93-E5E9-4240-9B76-116D93B4B3B8}.Debug|x86.ActiveCfg = Debug|x86
+		{399B5D93-E5E9-4240-9B76-116D93B4B3B8}.Debug|x86.Build.0 = Debug|x86
+		{399B5D93-E5E9-4240-9B76-116D93B4B3B8}.Release|x86.ActiveCfg = Release|x86
+		{399B5D93-E5E9-4240-9B76-116D93B4B3B8}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal
