@@ -41,8 +41,34 @@ namespace DataStructures.CustomStack
             top = topStackNode;
         }
 
-        public object peek();
+        public object peek()
+        {
+            if (top == null) throw new Exception("The stack is empty");
+
+            return top.data;
+
+        }
 
         public bool isEmpty()
+        {
+            return top == null;
+        }
+
+        public void PrintStack()
+        {
+            StackNode node = top;
+
+            if (node == null)
+            {
+                Console.WriteLine("The stack is empty");
+                return;
+            }
+
+            while (node != null)
+            {
+                Console.WriteLine(string.Format("==\t\t{0}t\t==", node.data));
+                node = node.next;
+            }
+        }
     }
 }
