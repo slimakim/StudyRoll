@@ -1,5 +1,6 @@
 ﻿using System;
 using DataStructures.CustomLinkedList;
+using DataStructures.CustomQueue;
 using DataStructures.CustomStack;
 
 namespace DataStructures
@@ -8,7 +9,7 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            ExecStack();
+            ExecQueue();
         }
 
         public static void ExecLinkedList()
@@ -55,8 +56,27 @@ namespace DataStructures
             myStack.pop();
 
             myStack.PrintStack();
+        }
 
+        public static void ExecQueue()
+        {
+            MyQueue myQueue = new MyQueue();
 
+            myQueue.IsEmpty();
+
+            myQueue.PrintQueue();
+
+            myQueue.Add(7);
+
+            myQueue.Add("Tina");
+
+            myQueue.Add("11 bytes");
+
+            myQueue.Add(91);
+
+            myQueue.Remove();
+
+            myQueue.PrintQueue();
         }
     }
 }

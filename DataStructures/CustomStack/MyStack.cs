@@ -3,6 +3,13 @@ namespace DataStructures.CustomStack
 {
     public class MyStack
     {
+        /*
+            [  5  ]
+            [  4  ]
+            [  3  ]
+            [  2  ]
+            [  1  ]
+        */
         private StackNode top;
 
         public MyStack()

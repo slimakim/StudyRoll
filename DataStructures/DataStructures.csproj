@@ -37,10 +37,12 @@
     <Compile Include="CustomLinkedList\Node.cs" />
     <Compile Include="CustomLinkedList\LinkedListManager.cs" />
     <Compile Include="CustomStack\MyStack.cs" />
+    <Compile Include="CustomQueue\MyQueue.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomLinkedList\" />
     <Folder Include="CustomStack\" />
+    <Folder Include="CustomQueue\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
