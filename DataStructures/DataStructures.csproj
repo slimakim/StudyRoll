@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -32,6 +32,8 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomTree\Node.cs" />
+    <Compile Include="CustomTree\Tree.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CustomLinkedList\Node.cs" />
@@ -39,10 +41,6 @@
     <Compile Include="CustomStack\MyStack.cs" />
     <Compile Include="CustomQueue\MyQueue.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CustomLinkedList\" />
-    <Folder Include="CustomStack\" />
-    <Folder Include="CustomQueue\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

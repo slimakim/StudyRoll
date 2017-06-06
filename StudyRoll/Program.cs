@@ -17,11 +17,9 @@ namespace StudyRoll
             };
             Coordinate c3 = new Coordinate();
 
-
             Console.WriteLine(c1);
             Console.WriteLine(c2);
             Console.WriteLine(c3);
-
         }
     }
 }
