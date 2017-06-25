@@ -37,7 +37,6 @@ namespace DataStructures.CustomQueue
         {
             QueueNode node = new QueueNode(data);
 
-
             if (last != null)
             {
                 last.next = node;
