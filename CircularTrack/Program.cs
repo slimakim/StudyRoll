@@ -28,12 +28,9 @@ namespace CircularTrack
                         {
                             if (amount > 1)
                             {
-                                isCorrectInput = true;
-
-                                var trainCarCalculator = new TrainCarCalculator();
-
-                                Console.WriteLine("The amount of cars is:" + trainCarCalculator.Calculate(amount));
-                                Console.WriteLine("Press any key to quit");
+                                var trainCarCalculator = new TrainCarCalculator(amount);
+                                Console.WriteLine("The amount of cars is:" + trainCarCalculator.CalculatedSize);
+                                Console.WriteLine("Press any key to continue, or press 'q' to quit");
                                 Console.ReadKey();
                             }
                             else
@@ -74,24 +71,35 @@ namespace CircularTrack
         }
     }
 
-
     class TrainCarCalculator
     {
-        public int Calculate(int amount)
+        private int _calculatedSize;
+
+        public int CalculatedSize
+        {
+            get { return _calculatedSize; }
+        }
+
+        public TrainCarCalculator(int amount)
+        {
+            _calculatedSize = Calculate(ConstructTrain(amount));
+        }
+
+        public TrainCar ConstructTrain(int carAmount)
         {
             var head = new TrainCar(1);
 
-            var tail = new TrainCar(amount);
+            var tail = new TrainCar(carAmount);
 
             head.Previous = tail;
 
             tail.Next = head;
 
-            if (amount > 2)
+            if (carAmount > 2)
             {
                 var current = head;
 
-                for (int index = 1; index < amount - 1; index++)
+                for (int index = 1; index < carAmount - 1; index++)
                 {
                     var nextTrainCar = new TrainCar(index + 1);
 
@@ -113,7 +121,79 @@ namespace CircularTrack
                 tail.Previous = head;
             }
 
-            return -1;
+            return head;
+        }
+
+        public int Calculate(TrainCar trainCar)
+        {
+            bool isLightBulbOn = true;
+
+            int level = 1;
+
+            int stepsTaken = 0;
+
+            while (isLightBulbOn)
+            {
+                WalkLeft(trainCar.Next, level);
+
+                WalkRight(trainCar.Previous, level);
+
+                var lightStatusReport= CheckLightsOn(trainCar.Next, level);
+
+                isLightBulbOn = lightStatusReport.IsLightOn;
+
+                stepsTaken = lightStatusReport.StepsTaken;
+
+                level++;
+            }
+            return level + stepsTaken;
+        }
+
+        public void WalkLeft(TrainCar trainCar, int steps)
+        {
+            trainCar.IsLightOn = true;
+
+            for (int step = 1; step < steps; step++)
+            {
+                WalkLeft(trainCar.Next, steps - 1);
+            }
+        }
+
+        public void WalkRight(TrainCar trainCar, int steps)
+        {
+            trainCar.IsLightOn = false;
+
+            for (int step = 1; step < steps; step++)
+            {
+                WalkRight(trainCar.Previous, steps - 1);
+            }
+        }
+
+        //count steps taken. + level.
+        public LightStatusReport CheckLightsOn(TrainCar trainCar, int steps)
+        {
+            LightStatusReport lsr = new LightStatusReport() {IsLightOn = trainCar.IsLightOn, StepsTaken = 1};
+
+            if (!trainCar.IsLightOn)
+            {
+                return lsr;
+            }
+
+            for (int step = 1; step < steps; step++)
+            {
+                lsr = CheckLightsOn(trainCar.Next, steps - 1);
+                lsr.StepsTaken += step;
+            }
+
+            return lsr;
         }
     }
+
+    public class LightStatusReport
+    {
+        public int StepsTaken { get; set; }
+
+        public bool IsLightOn { get; set; }
+    }
+
 }
