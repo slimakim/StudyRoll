@@ -145,7 +145,7 @@ namespace CircularTrackTwo
 
             int result = GoForward(head);
 
-            _calculatedSize = result;s
+            _calculatedSize = result;
 
             return result;
         }
