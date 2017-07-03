@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 namespace DelegatesTutorial
 {
 	public delegate void WorkPerformedHandler(int hours, string description);
+
 	public class Worker
 	{
-		public event WorkPerformedHandler WorkPerformed;
+        public event EventHandler<WorkPerformedEventArgs> WorkPerformed;
 		public event EventHandler WorkCompleted;
 
 		public void DoWork(int hours, string description)
@@ -24,10 +25,10 @@ namespace DelegatesTutorial
 		}
 
 		public void OnWorkPerformed(int hours, string description)
-		{
-			var del = WorkPerformed as WorkPerformedHandler;
+        {
+			
 			description += " performed.";
-			del?.Invoke(hours, description);			
+            WorkPerformed?.Invoke(this, new WorkPerformedEventArgs() { Hours = hours, WorkType = description });
 		}
 
 		public void OnWorkCompleted(int hours, string description)

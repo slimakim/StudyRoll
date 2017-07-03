@@ -32,9 +32,9 @@ namespace DelegatesTutorial
 			Console.ReadKey();
 		}
 
-		static void PerformWork(int hours, string description)
+		static void PerformWork(object sender, WorkPerformedEventArgs args)
 		{
-			Console.WriteLine(string.Format("Did {0} for {1} hours.", description, hours));
+            Console.WriteLine(string.Format("Did {0} for {1} hours.", args.WorkType, args.Hours));
 		}
 
 		static void PerformLazy(object sender, EventArgs args)
